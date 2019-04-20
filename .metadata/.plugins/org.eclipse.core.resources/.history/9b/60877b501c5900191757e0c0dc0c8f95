@@ -1,0 +1,30 @@
+package io.github.hardlitchi.rest.security;
+
+import java.util.List;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.AuthorityUtils;
+
+import io.github.hardlitchi.rest.security.entity.Account;
+
+public class SimpleLoginUser extends org.springframework.security.core.userdetails.User {
+
+    // Userエンティティ
+    private Account account;
+
+    public Account getUser() {
+        return account;
+    }
+
+    public SimpleLoginUser(Account account) {
+        super(account.getUsername(), account.getPassword(), determineRoles(account.getAdmin()));
+        this.account = account;
+    }
+
+    private static final List<GrantedAuthority> USER_ROLES = AuthorityUtils.createAuthorityList("ROLE_USER");
+    private static final List<GrantedAuthority> ADMIN_ROLES = AuthorityUtils.createAuthorityList("ROLE_ADMIN", "ROLE_USER");
+
+    private static List<GrantedAuthority> determineRoles(boolean isAdmin) {
+        return isAdmin ? ADMIN_ROLES : USER_ROLES;
+    }
+}

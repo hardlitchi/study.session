@@ -1,0 +1,65 @@
+package io.github.hardlitchi.rest.common.entity;
+
+import java.io.Serializable;
+import java.sql.Timestamp;
+import java.util.UUID;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+/**
+ * 【Entityクラス】
+ * <br>
+ * 呼称情報.
+ * @author hardlitchi
+ * @version 1.0
+ */
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@ToString(callSuper=true)
+@Entity
+public class Name implements Serializable {
+
+	/** シリアルバージョン. */
+	private static final long serialVersionUID = 4221109910584867721L;
+
+	/** ID(内部識別子). */
+	@Id
+	@GeneratedValue
+	private UUID id = UUID.randomUUID();
+	/** 外部キー紐づけ先. */
+	private String type;
+	/** 外部キー. */
+	private Long extractid;
+	/** 呼称. */
+	private String name;
+	/** 所有者属性. */
+	private String ownerattribute;
+	/** 所有者. */
+	private Long ownerid;
+	/** 作成日時. */
+	private Timestamp createTimestamp;
+	/** 更新日時. */
+	private Timestamp updateTimestamp;
+	/** 削除日時. */
+	private Timestamp deleteTimestamp;
+	/** 呼称公開設定ID. */
+	private Long nameflag;
+	/** 作成日時公開設定ID. */
+	private Long createTimestampflag;
+	/** 更新日時公開設定ID. */
+	private Long updateTimestampflag;
+	/** 削除日時公開設定ID. */
+	private Long deleteTimestampflag;
+}

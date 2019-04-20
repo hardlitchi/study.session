@@ -1,0 +1,16 @@
+package io.github.hardlitchi.rest.common.converter;
+
+public class Snippet {
+	
+	
+	@Override
+	public String convertToDatabaseColumn(UUID attribute) {
+	    return attribute == null ? null : attribute.toString();
+	}
+	
+	@Override
+	public UUID convertToEntityAttribute(String dbData) {
+	    return dbData == null ? null : UUID.fromString(dbData);
+	}
+}
+

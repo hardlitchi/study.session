@@ -1,0 +1,48 @@
+package io.github.hardlitchi.rest.chat.bean;
+
+import java.sql.Timestamp;
+
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
+
+@Data
+public class ChatMessage {
+
+	private Long id;
+
+	/** 宛先. */
+	@ApiModelProperty(value = "宛先")
+	private String toName;
+
+	/** 送り主. */
+	@ApiModelProperty(value = "送り主")
+	private String fromName;
+
+	/** CC先. */
+	@ApiModelProperty(value = "CC先")
+	private String ccName;
+
+	/** BCC先. */
+	@ApiModelProperty(value = "BCC先")
+	private String bccName;
+
+	/** タイトル. */
+	@ApiModelProperty(value = "タイトル")
+	private String title;
+
+	/** 本文. */
+	@ApiModelProperty(value = "本文")
+	private String message;
+
+	/** 作成日時. */
+	@ApiModelProperty(value = "作成日時")
+	private Timestamp createTimestamp;
+
+	/** 更新日時. */
+	@ApiModelProperty(value = "更新日時")
+	private Timestamp updateTimestamp;
+
+	/** 削除日時. */
+	@ApiModelProperty(value = "削除日時")
+	private Timestamp deleteTimestamp;
+}

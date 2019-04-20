@@ -1,0 +1,5 @@
+package io.github.hardlitchi.rest.chat.bean;
+
+public class ChatMessage {
+
+}

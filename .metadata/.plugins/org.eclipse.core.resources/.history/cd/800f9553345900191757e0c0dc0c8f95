@@ -1,0 +1,38 @@
+package io.github.hardlitchi.rest.security.controller;
+
+import java.sql.Timestamp;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import io.github.hardlitchi.rest.common.util.TimestampUtil;
+import io.github.hardlitchi.rest.security.entity.Account;
+import io.github.hardlitchi.rest.security.service.AccountService;
+import io.github.hardlitchi.rest.user.entity.User;
+import io.github.hardlitchi.rest.user.service.UserService;
+
+@RestController
+public class AccountController {
+
+	@Autowired
+	private TimestampUtil timestampUtil;
+	@Autowired
+	private AccountService accountService;
+	@Autowired
+	private UserService userService;
+
+	@PostMapping(path="/signin")
+	public Account signin(String username, String password, String admin) {
+		Account account = accountService.saveAndFlush(username, password, "TRUE".equals(admin));
+
+		Timestamp now = timestampUtil.now();
+		User user = new User();
+		user.setUsername(username);
+		user.setCreateTimestamp(now);
+		user.setUpdateTimestamp(now);
+		userService.saveAndFlush(null, user);
+
+		return account;
+	}
+}

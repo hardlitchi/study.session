@@ -1,0 +1,37 @@
+package io.github.hardlitchi.rest.chat.entity;
+
+import java.sql.Timestamp;
+
+import lombok.Data;
+
+/**
+ * 【Beanクラス】
+ * <br>
+ * チャットメッセージ.
+ * @author hardlitchi
+ * @version 1.0
+ */
+@Data
+public class ChatMessage {
+
+	/** ID(内部識別子). */
+	private Long id;
+	/** タイトル. */
+	private String title;
+	/** 本文. */
+	private String message;
+	/** 作成日時. */
+	private Timestamp createTimestamp;
+	/** 更新日時. */
+	private Timestamp updateTimestamp;
+	/** 削除日時. */
+	private Timestamp deleteTimestamp;
+	/** タイトル公開設定ID. */
+	private Long titleflag;
+	/** 作成日時公開設定ID. */
+	private Long createTimestampflag;
+	/** 更新日時公開設定ID. */
+	private Long updateTimestampflag;
+	/** 削除日時公開設定ID. */
+	private Long deleteTimestampflag;
+}

@@ -1,0 +1,5 @@
+package io.github.hardlitchi.rest.security.controller;
+
+public class AccountController {
+
+}

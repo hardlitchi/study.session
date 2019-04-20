@@ -1,0 +1,33 @@
+package io.github.hardlitchi.rest.user.bean;
+
+import java.sql.Timestamp;
+
+import lombok.Data;
+
+/**
+ * 【Entityクラス】
+ * <br>
+ * 呼称情報.
+ * @author hardlitchi
+ * @version 1.0
+ */
+@Data
+public class Name {
+
+	/** ID(内部識別子). */
+	private Long id;
+	/** 外部キー紐づけ先. */
+	private String type;
+	/** 外部キー. */
+	private Long extractid;
+	/** 呼称. */
+	private String name;
+	/** 所有者. */
+	private Long userid;
+	/** 作成日時. */
+	private Timestamp createTimestamp;
+	/** 更新日時. */
+	private Timestamp updateTimestamp;
+	/** 削除日時. */
+	private Timestamp deleteTimestamp;
+}

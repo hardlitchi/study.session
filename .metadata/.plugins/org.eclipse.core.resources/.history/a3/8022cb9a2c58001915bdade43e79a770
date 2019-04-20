@@ -1,0 +1,5 @@
+package io.github.hardlitchi.rest.hello.controller;
+
+public class HelloController {
+
+}

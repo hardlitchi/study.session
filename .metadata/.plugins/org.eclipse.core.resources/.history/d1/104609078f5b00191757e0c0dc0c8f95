@@ -1,0 +1,7 @@
+package io.github.hardlitchi.rest.common.converter;
+
+import javax.persistence.AttributeConverter;
+
+public class UUIDToBytesConverter implements AttributeConverter<X, Y> {
+
+}

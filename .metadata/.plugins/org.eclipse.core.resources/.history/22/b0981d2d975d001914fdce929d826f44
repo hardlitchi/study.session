@@ -1,0 +1,7 @@
+package io.github.hardlitchi.rest.chat.constant;
+
+public enum ChatErrorCode {
+
+	/** チャット送信者が設定されていません. */
+	CHAU0001;
+}

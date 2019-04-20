@@ -1,0 +1,33 @@
+package io.github.hardlitchi.rest.security.service;
+
+import com.example.demo.repository.UserRepository;
+
+import io.github.hardlitchi.rest.security.bean.SimpleLoginUser;
+import io.github.hardlitchi.rest.security.repository.AccountRepository;
+
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
+
+/**
+ * Userエンティティ
+ */
+@Service("simpleUserDetailsService")
+public class SimpleUserDetailsService implements UserDetailsService {
+
+    private final AccountRepository accountRepository;
+
+    public SimpleUserDetailsService(AccountRepository accountRepository) {
+        this.accountRepository = accountRepository;
+    }
+
+    @Override
+    public UserDetails loadUserByUsername(final String username) {
+        // emailでデータベースからユーザーエンティティを検索する
+        return accountRepository.findByUsername(username)
+                .map(SimpleLoginUser::new)
+                .orElseThrow(() -> new UsernameNotFoundException("user not found"));
+    }
+
+}

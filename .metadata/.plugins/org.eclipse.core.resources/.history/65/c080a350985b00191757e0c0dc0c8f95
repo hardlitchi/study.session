@@ -1,0 +1,7 @@
+package io.github.hardlitchi.rest.chat.exception;
+
+import io.github.hardlitchi.rest.common.exception.BaseException;
+
+public class ChatException extends BaseException {
+
+}

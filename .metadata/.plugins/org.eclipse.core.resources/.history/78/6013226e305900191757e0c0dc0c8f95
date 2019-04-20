@@ -1,0 +1,13 @@
+package io.github.hardlitchi.rest.security.controller;
+
+import io.github.hardlitchi.rest.security.service.AccountService;
+
+public class AccountController {
+
+	@Autowired
+	private AccountService accountService;
+
+	public Account signin(String username, String password, String admin) {
+		Account account =
+	}
+}

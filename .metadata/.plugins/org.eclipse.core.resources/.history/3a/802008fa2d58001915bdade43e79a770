@@ -1,0 +1,15 @@
+package io.github.hardlitchi.rest.common;
+
+import java.sql.Timestamp;
+import java.time.Instant;
+
+public class TimestampUtil {
+
+	/**
+	 * 現在時刻を返却する.
+	 * @return 現在時刻
+	 */
+	public Timestamp now() {
+		return Timestamp.from(Instant.now()):
+	}
+}

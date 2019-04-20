@@ -1,0 +1,10 @@
+package io.github.hardlitchi.rest.chat.bean;
+
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+
+import lombok.Data;
+
+@Data
+public class ChatMessage {
+
+}

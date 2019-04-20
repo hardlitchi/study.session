@@ -1,0 +1,15 @@
+package io.github.hardlitchi.rest.user.bean;
+
+import lombok.Data;
+
+/**
+ * 複素数クラス.
+ * @author hardlitchi
+ * @version 1.0
+ */
+@Data
+public class Complex {
+
+	private double real;
+	private double image;
+}

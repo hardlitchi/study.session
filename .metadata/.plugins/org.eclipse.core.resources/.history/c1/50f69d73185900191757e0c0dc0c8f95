@@ -1,0 +1,36 @@
+package io.github.hardlitchi.rest.chat.entity;
+
+import java.sql.Timestamp;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+import lombok.Data;
+
+/**
+ * 【Entityクラス】
+ * <br>
+ * チャット送信情報.
+ * @author hardlitchi
+ * @version 1.0
+ */
+@Data
+public class ChatSend {
+
+	/** ID(内部識別子). */
+	@Id
+	@GeneratedValue
+	private Long id;
+	/** 送信区分. */
+	private String transcategory;
+	/** 宛先タイプ. */
+	private String destinationtype;
+	/** 宛先. */
+	private Long destination;
+	/** 作成日時. */
+	private Timestamp createTimestamp;
+	/** 送信日時. */
+	private Timestamp sendedTimestamp;
+	/** 削除日時. */
+	private Timestamp deleteTimestamp;
+}

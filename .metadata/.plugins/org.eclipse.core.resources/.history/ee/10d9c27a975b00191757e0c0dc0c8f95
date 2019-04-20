@@ -1,0 +1,5 @@
+package io.github.hardlitchi.rest.common.exception;
+
+public class BaseException extends Throwable {
+
+}

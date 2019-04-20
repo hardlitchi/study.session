@@ -1,0 +1,28 @@
+package io.github.hardlitchi.rest.security.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+
+import io.github.hardlitchi.rest.security.entity.Account;
+import io.github.hardlitchi.rest.security.repository.AccountRepository;
+
+@Service
+public class AccountService {
+
+	@Autowired
+	private AccountRepository accountRepository;
+
+	@Autowired
+	private PasswordEncoder passwordEncoder;
+
+	public Account getAccount(String username, String password) {
+		return accountRepository.findByUsernameAndPassword(username, passwordEncoder.encode(password)).orElse(null);
+	}
+
+	public Account saveAndFlush(String username, String password, Boolean admin) {
+		Account account = Account.of(username, passwordEncoder.encode(password));
+		account.setAdmin(admin);
+		return accountRepository.saveAndFlush(account);
+	}
+}

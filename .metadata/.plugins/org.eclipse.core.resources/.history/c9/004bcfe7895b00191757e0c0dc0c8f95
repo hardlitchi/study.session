@@ -1,0 +1,51 @@
+package io.github.hardlitchi.rest.chat.entity;
+
+import java.io.Serializable;
+import java.sql.Timestamp;
+import java.util.UUID;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+import io.github.hardlitchi.rest.chat.entity.ChatMessage.ChatMessageBuilder;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+/**
+ * 【Entityクラス】
+ * <br>
+ * チャット送信情報.
+ * @author hardlitchi
+ * @version 1.0
+ */
+@Data
+@Entity
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+public class ChatSend implements Serializable {
+
+	/** シリアルバージョン. */
+	private static final long serialVersionUID = 6699267131365748043L;
+
+	/** ID(内部識別子). */
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private final UUID id = UUID.randomUUID();
+	/** 送信区分. */
+	private String transcategory;
+	/** 宛先タイプ. */
+	private String destinationtype;
+	/** 宛先. */
+	private Long destination;
+	/** 作成日時. */
+	private Timestamp createTimestamp;
+	/** 送信日時. */
+	private Timestamp sendedTimestamp;
+	/** 削除日時. */
+	private Timestamp deleteTimestamp;
+}

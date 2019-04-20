@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;TimestampUtil.java&apos; to &apos;rest/src/main/java/io.github.hardlitchi.rest.common.util&apos;&#x0D;&#x0A;- 元のプロジェクト: &apos;rest&apos;&#x0D;&#x0A;- 宛先要素: &apos;rest/src/main/java/io.github.hardlitchi.rest.common.util&apos;&#x0D;&#x0A;- オリジナル要素: &apos;io.github.hardlitchi.rest.common.TimestampUtil.java&apos;&#x0D;&#x0A;- リファクタリングされた要素の参照を更新" description="コンパイル単位を移動" destination="/src\/main\/java&lt;io.github.hardlitchi.rest.common.util" element1="/src\/main\/java&lt;io.github.hardlitchi.rest.common{TimestampUtil.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" patterns="*" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1554529083953" units="1" version="1.0"/>
+</session>

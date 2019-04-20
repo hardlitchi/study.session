@@ -1,0 +1,55 @@
+package io.github.hardlitchi.rest.hello.service;
+
+import java.sql.Timestamp;
+import java.time.Instant;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import io.github.hardlitchi.rest.chat.bean.ChatMessage;
+import io.github.hardlitchi.rest.common.util.TimestampUtil;
+
+@Service
+public class HelloService {
+
+	/** サービス名. */
+	private final static String SERVICE_NAME = "W.Hello";
+	/** サービスタイトル. */
+	private final static String SERVICE_TITLE = "Greeting";
+	/** ブラックリスト. */
+	private List<String> blackList = new ArrayList<>();
+
+	@Autowired
+	private TimestampUtil timestampUtil;
+
+	public ChatMessage exec(String name) {
+
+		var now = timestampUtil.now();
+
+		ChatMessage responseMessage = new ChatMessage();
+		responseMessage.setToName(name);
+		responseMessage.setFromName(SERVICE_NAME);
+		responseMessage.setTitle(SERVICE_TITLE);
+		responseMessage.setMessage(createMessage(name));
+		responseMessage.setCreateTimestamp(now);
+		responseMessage.setUpdateTimestamp(now);
+
+		return responseMessage;
+	}
+
+	private String createMessage(String name) {
+
+		List<String> blackList = new ArrayList<>();
+		blackList.add("無法者");
+
+		var message = new StringBuilder();
+
+		if (blackList.contains(name)) {
+			return "もう二度と送ってこないでください。";
+		}
+
+
+	}
+}
