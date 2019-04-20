@@ -1,7 +1,0 @@
-INDEX VERSION 1.4+D:\Documents\02.workspaces\90.hardlitchi\01.study.session\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-1156764711.index
-785543157.index
-465343554.index
-3620737872.index
-1643784542.index
-4101381499.index

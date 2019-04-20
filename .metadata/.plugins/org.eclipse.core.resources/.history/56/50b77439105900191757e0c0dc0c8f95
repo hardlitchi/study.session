@@ -1,5 +1,0 @@
-package io.github.hardlitchi.rest.user.bean;
-
-public class Anniversary {
-
-}

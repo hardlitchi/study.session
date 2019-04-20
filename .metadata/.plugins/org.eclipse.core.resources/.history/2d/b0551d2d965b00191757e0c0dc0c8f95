@@ -1,9 +1,0 @@
-package io.github.hardlitchi.rest.chat.repository;
-
-import org.springframework.data.jpa.repository.JpaRepository;
-
-import io.github.hardlitchi.rest.chat.entity.ChatMessage;
-
-public interface ChatMessageRepository extends JpaRepository<ChatMessage, String> {
-
-}

@@ -1,7 +1,0 @@
-package io.github.hardlitchi.rest.common.repository;
-
-import org.springframework.data.repository.PagingAndSortingRepository;
-
-public interface NameRepository extends PagingAndSortingRepository<T, ID> {
-
-}

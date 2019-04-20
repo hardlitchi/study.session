@@ -1,8 +1,0 @@
-package io.github.hardlitchi.rest.common.exception;
-
-public class BaseException extends Exception {
-
-	/** シリアルバージョン. */
-	private static final long serialVersionUID = 4698138200601670801L;
-
-}

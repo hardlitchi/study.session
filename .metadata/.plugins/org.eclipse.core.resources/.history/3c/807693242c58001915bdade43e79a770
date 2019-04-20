@@ -1,8 +1,0 @@
-package io.github.hardlitchi.rest.chat.bean;
-
-import lombok.Data;
-
-@Data
-public class ChatMessage {
-
-}

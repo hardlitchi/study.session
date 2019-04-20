@@ -1,9 +1,0 @@
-package io.github.hardlitchi.rest.common.converter;
-
-import java.util.UUID;
-
-import javax.persistence.AttributeConverter;
-
-public class UUIDToBytesConverter implements AttributeConverter<UUID, String> {
-
-}
