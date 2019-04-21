@@ -1,6 +1,3 @@
-
-.metadata
-.recommenders
 .DS_Store
 node_modules/
 /dist/
